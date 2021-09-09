@@ -62,6 +62,14 @@ public class GUI implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String input = textField.getText();
+		for(int i =0; i < input.length(); i++) {
+			if(input.charAt(i) == '0' || input.charAt(i) == '1') {
+				continue;
+			} else {
+				resultLabel.setText("ERROR!");
+				return;
+			}
+		}
 		String output = Translator.convertBinary(input);
 		resultLabel.setText(input + " is equal to " + output);
 	}
